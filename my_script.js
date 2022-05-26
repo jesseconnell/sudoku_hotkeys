@@ -28,13 +28,10 @@
         b.dispatchEvent(ev);
     };
 
-    var multiKey = function(e) {
-        e.target.dispatchEvent(e);
-//        document.dispatchEvent(e);
-    }
-
     var onKeyDown = function(e) {
-        console.info(e);
+        //console.info(e);
+        document.copies.push(e);
+
 
         if (e.code == "Space" || e.code == "NumpadEnter")
         {
@@ -44,12 +41,25 @@
         {
             doClick(undoButton);
         }
-        if (e.ctrlKey && ["ArrowLeft", "ArrowUp", "ArrowDown", "ArrowRight"].includes(e.code))
+        if (["ArrowLeft", "ArrowUp", "ArrowDown", "ArrowRight"].includes(e.code))
         {
-            console.log(`Arrow: ${e.code} pressed`);
-            multiKey(e);
+            //console.log(`Arrow: ${e.code} pressed`);
+            if (e.ctrlKey)
+            {
+                var eCopy = new e.constructor(e.type, e);
+                if (e.repeatCount)
+                {
+                    eCopy.repeatCount = e.repeatCount-1;
+                }
+                else
+                {
+                    eCopy.repeatCount = 7
+                }
+                document.dispatchEvent(eCopy);
+            }
         }
     };
+    document.copies=[]
 
     document.addEventListener("keydown", onKeyDown);
 })();
