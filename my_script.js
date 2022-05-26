@@ -14,8 +14,11 @@
 
     // Mask space bar scrolling:
     window.addEventListener('keydown', (e) => {
-        if ([13, 32].includes(e.keyCode) && e.target === document.body) {
+        console.info(e);
+        if ([13, 32].includes(e.keyCode) && e.target === document.body)
+        {
             e.preventDefault();
+            console.log('muted')
         }
     });
 
@@ -29,7 +32,8 @@
     };
 
     var onKeyDown = function(e) {
-        //console.info(e);
+
+        console.info(e);
         document.copies.push(e);
 
 
