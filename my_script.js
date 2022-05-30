@@ -6,8 +6,11 @@
 // @author       Jesse Connell
 // @match        https://sudoku.com/*
 // @icon         https://www.google.com/s2/favicons?domain=sudoku.com
+// @downloadURL  https://raw.githubusercontent.com/jesseconnell/sudoku_hotkeys/main/my_script.js
+// @updateURL    https://raw.githubusercontent.com/jesseconnell/sudoku_hotkeys/main/my_script.js
 // @grant        none
 // ==/UserScript==
+
 
 (function() {
     'use strict';
