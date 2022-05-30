@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Sudoku.com Hotkeys
 // @namespace    http://tampermonkey.net/
-// @version      1.0
-// @description  Keyboard shortcuts for sudoku.com
+// @version      1.1
+// @description  Custom keyboard shortcuts for sudoku.com
 // @author       Jesse Connell
 // @match        https://sudoku.com/*
 // @icon         https://www.google.com/s2/favicons?domain=sudoku.com
